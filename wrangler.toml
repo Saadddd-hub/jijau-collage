@@ -1,0 +1,25 @@
+name = "jijau-dnyanteerth-campus"
+compatibility_date = "2024-09-01"
+pages_build_output_dir = ".vercel/output/static"
+
+# Environment Variables
+[vars]
+JWT_SECRET = "jijau_dnyanteerth_super_secret_jwt_key_2026"
+
+# Cloudflare D1 Database Binding
+[[d1_databases]]
+binding = "DB"
+database_name = "jijau_db"
+database_id = "00000000-0000-0000-0000-000000000000"
+
+# Cloudflare R2 Bucket Binding
+[[r2_buckets]]
+binding = "R2_BUCKET"
+bucket_name = "jijau-media"
+
+# Route / Custom Domain Configuration
+routes = [
+  { pattern = "jijaudnyanteerth.in/*", zone_name = "jijaudnyanteerth.in" },
+  { pattern = "www.jijaudnyanteerth.in/*", zone_name = "jijaudnyanteerth.in" },
+  { pattern = "admin.jijaudnyanteerth.in/*", zone_name = "jijaudnyanteerth.in" }
+]
