@@ -39,7 +39,7 @@ export default function PublicHomePage() {
       try {
         const res = await fetch("/api/news");
         if (!res.ok) throw new Error("Failed to fetch news");
-        const data = await res.json();
+        const data: any = await res.json();
         setNews(data.news || []);
       } catch (err) {
         setNewsError(true);
@@ -61,7 +61,7 @@ export default function PublicHomePage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formState)
       });
-      const data = await res.json();
+      const data: any = await res.json();
 
       if (res.ok) {
         setFeedbackMessage({

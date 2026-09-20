@@ -3,7 +3,7 @@ import { getD1Database } from "@/lib/db";
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
+    const body: any = await request.json();
     const { full_name, phone, email, wing, message } = body || {};
 
     if (!full_name || !phone || !wing || !message) {

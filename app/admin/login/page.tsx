@@ -22,7 +22,7 @@ export default function AdminLoginPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })
       });
-      const data = await res.json();
+      const data: any = await res.json();
 
       if (res.ok) {
         router.push("/admin/dashboard");

@@ -3,7 +3,8 @@
 export function getD1Database(): D1Database | null {
   try {
     // Try retrieving Cloudflare context from @cloudflare/next-on-pages
-    const { getCloudflareContext } = require('@cloudflare/next-on-pages');
+    const req = eval("require");
+    const { getCloudflareContext } = req('@cloudflare/next-on-pages');
     const ctx = getCloudflareContext();
     if (ctx?.env?.DB) {
       return ctx.env.DB as D1Database;

@@ -42,7 +42,7 @@ export async function POST(request: Request) {
         }
       }
     } else {
-      const body = await request.json();
+      const body: any = await request.json();
       title = body.title || "";
       category = body.category || "Campus";
       content = body.content || "";

@@ -56,7 +56,7 @@ export default function AdminDashboardPage() {
     try {
       const res = await fetch("/api/admin/inquiries");
       if (!res.ok) throw new Error("Failed to load");
-      const data = await res.json();
+      const data: any = await res.json();
       setInquiries(data.inquiries || []);
     } catch (e) {
       console.error(e);
@@ -70,7 +70,7 @@ export default function AdminDashboardPage() {
     try {
       const res = await fetch("/api/news");
       if (!res.ok) throw new Error("Failed to load");
-      const data = await res.json();
+      const data: any = await res.json();
       setNewsList(data.news || []);
     } catch (e) {
       console.error(e);
@@ -112,7 +112,7 @@ export default function AdminDashboardPage() {
         method: "POST",
         body: formData
       });
-      const data = await res.json();
+      const data: any = await res.json();
 
       if (res.ok) {
         setPublishStatus({

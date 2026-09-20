@@ -5,7 +5,7 @@ import { AdminUser } from "@/lib/types";
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
+    const body: any = await request.json();
     const { username, password } = body || {};
 
     if (!username || !password) {

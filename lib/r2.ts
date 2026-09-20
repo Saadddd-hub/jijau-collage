@@ -28,7 +28,8 @@ export function isAllowedMimeType(mimeType: string): boolean {
  */
 export function getR2Bucket(): R2Bucket | null {
   try {
-    const { getCloudflareContext } = require('@cloudflare/next-on-pages');
+    const req = eval("require");
+    const { getCloudflareContext } = req('@cloudflare/next-on-pages');
     const ctx = getCloudflareContext();
     if (ctx?.env?.R2_BUCKET) {
       return ctx.env.R2_BUCKET as R2Bucket;
